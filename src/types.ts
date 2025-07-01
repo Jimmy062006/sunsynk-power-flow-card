@@ -258,6 +258,7 @@ export interface CardConfigEntities {
 	inverter_voltage_154: string;
 	inverter2_voltage_154: string;
 	load_frequency_192: string;
+	load2_frequency_192: string;
 	inverter_current_164: string;
 	inverte2_current_164: string;
 	inverter_power_175: string;
