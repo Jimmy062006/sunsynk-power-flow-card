@@ -128,6 +128,45 @@ export class SunSynkCardEditor extends LitElement implements LovelaceCardEditor 
 					},
 					{
 						type: 'expandable',
+						title: this._title('inverter2'),
+						schema: [
+							{
+								name: 'inverter',
+								type: 'grid',
+								schema: [
+									{name: 'three_phase', selector: {boolean: {}}},
+									{name: 'auto_scale', selector: {boolean: {}}},
+									{
+										name: 'model',
+										selector: {
+											select: {
+												options: Object.values(InverterModel).map((x) => ({
+													label: capitalize(x),
+													value: x,
+												})),
+											},
+										},
+									},
+									{name: 'modern', selector: {boolean: {}}},
+									{
+										name: 'autarky',
+										selector: {
+											select: {
+												options: Object.values(AutarkyType).map((x) => ({
+													label: capitalize(x),
+													value: x,
+												})),
+											},
+										},
+									},
+									{name: 'colour', selector: {color_rgb: {}}},
+									{name: 'navigate', selector: {text: {}}},
+								],
+							},
+						],
+					},
+					{
+						type: 'expandable',
 						title: this._title('solar'),
 						schema: [
 							{
@@ -701,6 +740,38 @@ export class SunSynkCardEditor extends LitElement implements LovelaceCardEditor 
 											},
 											{
 												name: 'inverter_power_175',
+												selector: {entity: {device_class: SensorDeviceClass.POWER}},
+											},
+											{
+												name: 'inverter2_voltage_154',
+												selector: {entity: {device_class: SensorDeviceClass.VOLTAGE}},
+											},
+											{
+												name: 'inverter2_voltage_L2',
+												selector: {entity: {device_class: SensorDeviceClass.VOLTAGE}},
+											},
+											{
+												name: 'inverter2_voltage_L3',
+												selector: {entity: {device_class: SensorDeviceClass.VOLTAGE}},
+											},
+											{
+												name: 'load2_frequency_192',
+												selector: {entity: {device_class: SensorDeviceClass.FREQUENCY}},
+											},
+											{
+												name: 'inverter2_current_164',
+												selector: {entity: {device_class: SensorDeviceClass.CURRENT}},
+											},
+											{
+												name: 'inverter2_current_L2',
+												selector: {entity: {device_class: SensorDeviceClass.CURRENT}},
+											},
+											{
+												name: 'inverter2_current_L3',
+												selector: {entity: {device_class: SensorDeviceClass.CURRENT}},
+											},
+											{
+												name: 'inverter2_power_175',
 												selector: {entity: {device_class: SensorDeviceClass.POWER}},
 											},
 											{
