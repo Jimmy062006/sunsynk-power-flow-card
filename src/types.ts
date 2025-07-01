@@ -72,6 +72,15 @@ export interface sunsynkPowerFlowCardConfig extends LovelaceCardConfig {
 		three_phase: boolean;
 		navigate: string;
 	};
+	inverter2?: {
+		modern: boolean;
+		colour: string;
+		autarky: AutarkyType;
+		model: InverterModel;
+		auto_scale: boolean;
+		three_phase: boolean;
+		navigate: string;
+	};
 	battery: {
 		count: number;
 		energy: any;
